@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Change In Scene</title>
+	
+		<script type="text/javascript">
+			//Intiliaze the current scene to scene 0 (intro)
+			var curscene= 0;
+		function changscene (decision)
+		{
+			//Clear the Scene Message
+			var message = "";
+			switch (curscene)
+			{
+				case 0:
+				curscene = 1;
+				message ="Your Journey Starts at a Fork in the road.";
+				break;
+				case 1:
+				if (decision ==1)
+				{
+					curScene =2;
+				message ="You have arrived at a cute <q>little house in the woods.</q>";
+			}
+				break;
+				else
+				{
+					curScene =3;
+				message ="You're standing on the bridge overlooking a paceful stream.";
+			}
+			break;
+			//Update the scene image
+			document.getElementId("scene.img") .src = "scene" + curScene + ".png"
+			//Update the scene Scene description text
+			document.getElementId("scenetext") .innerHTML = message;
+		}
+		</script>
+		</head>
+	<body>
+		<div style="margin-top:100px; text-align: center;">
+			<img id= "sceneimg" src= "scene.jpg" alt= "Stick Figure Adventure"/><br />
+			<div id= "scenetext"></div><br />
+			Please choose:
+			<input type="button" id="decision1" value="1" onclick= "changescene(1)" />
+			<input type="button" id="decision2" value="2" onclick= "changescene(2)" />
+			</div>
+		</body>
+	</html>

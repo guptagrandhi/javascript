@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><title>Donut's</title>
+<script type="text/javascript">
+function UpdateOrder(){
+	const taxrate;
+	const donutprice=5;
+	var NumCakeDonuts=document.getElementById("cake").value;
+	var NumGlazedDonuts=document.getElementById("glaze").value;
+	var SubTotal= (NumCakeDonuts+NumGlazedDonuts)*donutprice;
+	var tax=SubTotal*taxrate;
+	var total=SubTotal+tax;
+	document.getElementById("a").value="$"+SubTotal.toFixed(2);
+	document.getElementById("b").value="$"+tax.toFixed(2);
+	document.getElementById("c").value="$"+total.toFixed(2);
+}
+function PlaceOrder(){
+	form.submit();
+}
+</script>
+</head>
+<body>
+	<h1>Donut's</h1>
+	<p>All donuts 50 cents each, cake or glazed</p>
+	<form name="form1" method="post">
+	<table>
+	<tr>
+	<th>Name</th>
+	<td><input type="text"></td>
+	</tr>
+		<tr>
+	<th>No. of cake donuts</th>
+	<td><input type="text" id="cake" onchange="UpdateOrder();"></td>
+	</tr>
+		<tr>
+	<th>No. of glazed donuts</th>
+	<td><input type="text" id="glaze" onchange="UpdateOrder();"></td>
+	</tr>
+		<tr>
+	<th>Minutes till pick up</th>
+	<td><input type="text"></td>
+	</tr>
+		<tr>
+	<th>Subtotal</th>
+	<td><input type="text" id="a"></td>
+	</tr>
+		<tr>
+	<th>Tax</th>
+	<td><input type="text" id="b"></td>
+	</tr>
+	<th>Total</th>
+	<td><input type="text" id="c"></td>
+	</tr>
+	</table>
+	<button onclick="PlaceOrder">Place Order</button>
+	</form>

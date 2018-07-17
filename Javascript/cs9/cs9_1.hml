@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head><title>Javascript</title>
+</head>
+<body onload="alert('Hello World')">
+	<h1>javasacript</h1>
+</body>
+</html>

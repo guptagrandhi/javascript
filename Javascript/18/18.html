@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Rock Line</title>
+	<script type="text/javascript">
+		function touchrock()
+	{
+		var username= prompt("what is your name?", "Enter your name here.");
+		if(username)
+		{
+			alert("It is good to meet you," + username + ".");
+			document.getElementById("rock").src="rock.jpg";
+		}
+	}
+	</script>
+	</head>
+	
+	<body onload="alert('this is a rock.');">
+		<div style="margin-top:100px; text-align: center">
+			<img id="rock" src="rock.jpg" alt="irock" />
+		</div> 
+	</body>
+	</html>
+	
